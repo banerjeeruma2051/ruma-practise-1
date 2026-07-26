@@ -1,12 +1,24 @@
-variable "rg" {}
+variable "rg" {
+  type = map(any)
+}
 
-variable "storage_account" {}
+variable "storage_account" {
+  type = map(any)
+}
 
-variable "vnet" {}
+variable "vnet" {
+  type = map(any)
+}
 
-variable "subnet" {}
+variable "subnet" {
+  type = map(any)
+}
 
-variable "nic" {}   
+variable "nic" {
+  type = map(any)
+}   
 
-variable "vm" {}   
+variable "vm" {
+  type = map(any)
+}   
 
