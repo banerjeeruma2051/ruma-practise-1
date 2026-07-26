@@ -1,0 +1,21 @@
+# Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Ignore any .tfvars files that are generated automatically for their terraform run, or ignore them if they contain secrets.
+# In this case we might want to push terraform.tfvars so we won't ignore it by default.
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# ignore zips and jsons generated during testing
+*.zip
+*.json

@@ -56,6 +56,10 @@ jobs:
         run: terraform init -input=false
         working-directory: parent_module/dev
         
+      - name: Terraform Format Check
+        run: terraform fmt -check
+        working-directory: parent_module/dev
+        
       - name: Terraform Validate
         run: terraform validate -no-color
         working-directory: parent_module/dev
