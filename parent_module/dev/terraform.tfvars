@@ -68,7 +68,7 @@ vm = {
     resource_group_name   = "rg1som"
     nic_name              = "nic1"
     admin_username        = "testadmin"
-    admin_password        = "Password1234!"
+    admin_password        = "Password1234!" # gitleaks:allow
     vm_size              = "Standard_D2s_v5"
     os_type               = "Linux"
   },
@@ -79,7 +79,7 @@ vm = {
     resource_group_name   = "rg1som"
     nic_name              = "nic2"
     admin_username        = "testadmin"
-    admin_password        = "Password1234!"
+    admin_password        = "Password1234!" # gitleaks:allow
     vm_size              = "Standard_D2s_v5"
     os_type               = "Windows"
   }

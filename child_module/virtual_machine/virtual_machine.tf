@@ -32,7 +32,7 @@ resource "azurerm_virtual_machine" "main" {
   os_profile {
     computer_name  = "${each.value.computer_name}"
     admin_username = each.value.admin_username
-    admin_password = each.value.admin_password
+    admin_password = each.value.admin_password # gitleaks:allow
   }
   os_profile_linux_config {
     disable_password_authentication = false
@@ -47,7 +47,7 @@ resource "azurerm_windows_virtual_machine" "winvm" {
   location            = each.value.location
   size                = each.value.vm_size
   admin_username      = each.value.admin_username
-  admin_password      = each.value.admin_password
+  admin_password      = each.value.admin_password # gitleaks:allow
   network_interface_ids = each.value.network_interface_ids
 
   tags = merge({

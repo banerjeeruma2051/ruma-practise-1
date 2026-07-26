@@ -85,7 +85,7 @@ module "virtual_machine" {
       resource_group_name   = each.value.resource_group_name
       network_interface_ids = [module.nic[each.value.nic_name].nic[each.value.nic_name].id]
       admin_username        = each.value.admin_username
-      admin_password        = each.value.admin_password
+      admin_password        = each.value.admin_password # gitleaks:allow
       vm_name              = each.value.name
       vm_size              = each.value.vm_size
       os_type               = each.value.os_type
