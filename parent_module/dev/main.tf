@@ -1,7 +1,7 @@
 
 
 module "resource_group" {
-  source = "../../child_module/resource_group"
+  source   = "../../child_module/resource_group"
   for_each = var.rg
   resource_group = {
     (each.key) = {
@@ -9,13 +9,13 @@ module "resource_group" {
       location = each.value.location
     }
   }
-  
+
 }
 
 module "storage_account" {
-  source = "../../child_module/storage_account"
+  source     = "../../child_module/storage_account"
   depends_on = [module.resource_group]
-  for_each = var.storage_account
+  for_each   = var.storage_account
   storage_account = {
     (each.key) = {
       name                     = each.value.name
@@ -28,9 +28,9 @@ module "storage_account" {
 }
 
 module "virtual_network" {
-  source = "../../child_module/virtual_network"
+  source     = "../../child_module/virtual_network"
   depends_on = [module.resource_group]
-  for_each = var.vnet
+  for_each   = var.vnet
   virtual_network = {
     (each.key) = {
       name                = each.value.name
@@ -42,9 +42,9 @@ module "virtual_network" {
 }
 
 module "subnet" {
-  source = "../../child_module/subnet"
+  source     = "../../child_module/subnet"
   depends_on = [module.virtual_network]
-  for_each = var.subnet
+  for_each   = var.subnet
   subnet = {
     (each.key) = {
       name                 = each.value.name
@@ -54,11 +54,11 @@ module "subnet" {
     }
   }
 }
-     
+
 module "nic" {
-  source = "../../child_module/nic"
+  source     = "../../child_module/nic"
   depends_on = [module.subnet]
-  for_each = var.nic
+  for_each   = var.nic
   nic = {
     (each.key) = {
       name                = each.value.name
@@ -75,8 +75,8 @@ module "nic" {
 
 module "virtual_machine" {
   depends_on = [module.nic]
-  source = "../../child_module/virtual_machine"
-  for_each = var.vm
+  source     = "../../child_module/virtual_machine"
+  for_each   = var.vm
   vm = {
     (each.key) = {
       name                  = each.value.name
@@ -86,8 +86,8 @@ module "virtual_machine" {
       network_interface_ids = [module.nic[each.value.nic_name].nic[each.value.nic_name].id]
       admin_username        = each.value.admin_username
       admin_password        = each.value.admin_password # gitleaks:allow
-      vm_name              = each.value.name
-      vm_size              = each.value.vm_size
+      vm_name               = each.value.name
+      vm_size               = each.value.vm_size
       os_type               = each.value.os_type
     }
   }

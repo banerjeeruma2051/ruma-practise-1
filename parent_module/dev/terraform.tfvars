@@ -3,8 +3,8 @@ rg = {
     name     = "rg1som"
     location = "East Asia"
   },
-  
-  }
+
+}
 
 
 storage_account = {
@@ -15,7 +15,7 @@ storage_account = {
     account_tier             = "Standard"
     account_replication_type = "LRS"
   },
-  
+
 }
 
 vnet = {
@@ -45,42 +45,42 @@ subnet = {
 
 nic = {
   nic1 = {
-    name                = "somnic1"
-    location            = "East Asia"
-    resource_group_name = "rg1som"
-    subnet_name         = "subnet1"
+    name                  = "somnic1"
+    location              = "East Asia"
+    resource_group_name   = "rg1som"
+    subnet_name           = "subnet1"
     network_interface_ids = ""
   },
   nic2 = {
-    name                = "somnic2"
-    location            = "East Asia"
-    resource_group_name = "rg1som"
-    subnet_name         = "subnet2"
+    name                  = "somnic2"
+    location              = "East Asia"
+    resource_group_name   = "rg1som"
+    subnet_name           = "subnet2"
     network_interface_ids = ""
   }
 }
 
 vm = {
   vm1 = {
-    name                  = "vm1"
-    computer_name         = "vm1-computer"
-    location              = "East Asia"
-    resource_group_name   = "rg1som"
-    nic_name              = "nic1"
-    admin_username        = "testadmin"
-    admin_password        = "Password1234!" # gitleaks:allow
-    vm_size              = "Standard_D2s_v5"
-    os_type               = "Linux"
+    name                = "vm1"
+    computer_name       = "vm1-computer"
+    location            = "East Asia"
+    resource_group_name = "rg1som"
+    nic_name            = "nic1"
+    admin_username      = "testadmin"
+    admin_password      = "Password1234!" # gitleaks:allow
+    vm_size             = "Standard_D2s_v5"
+    os_type             = "Linux"
   },
   vm2 = {
-    name                  = "vm2"
-    computer_name         = "vm2-computer"
-    location              = "East Asia"
-    resource_group_name   = "rg1som"
-    nic_name              = "nic2"
-    admin_username        = "testadmin"
-    admin_password        = "Password1234!" # gitleaks:allow
-    vm_size              = "Standard_D2s_v5"
-    os_type               = "Windows"
+    name                = "vm2"
+    computer_name       = "vm2-computer"
+    location            = "East Asia"
+    resource_group_name = "rg1som"
+    nic_name            = "nic2"
+    admin_username      = "testadmin"
+    admin_password      = "Password1234!" # gitleaks:allow
+    vm_size             = "Standard_D2s_v5"
+    os_type             = "Windows"
   }
 }

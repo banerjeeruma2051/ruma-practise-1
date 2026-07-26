@@ -16,9 +16,9 @@ variable "subnet" {
 
 variable "nic" {
   type = map(any)
-}   
+}
 
 variable "vm" {
   type = map(any)
-}   
+}
 
