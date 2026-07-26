@@ -37,9 +37,12 @@ jobs:
         run: |
           tflint --init
           tflint -f compact
+        working-directory: parent_module/dev
           
       - name: Run tfsec
         uses: aquasecurity/tfsec-action@v1.0.3
+        with:
+          working_directory: parent_module/dev
         
       - name: Setup Infracost
         uses: infracost/actions/setup@v3
@@ -47,13 +50,16 @@ jobs:
           api-key: ${{ secrets.INFRACOST_API_KEY }}
           
       - name: Run Infracost Breakdown
-        run: infracost breakdown --path .
+        run: infracost breakdown --path parent_module/dev
         
       - name: Terraform Init
         run: terraform init
+        working-directory: parent_module/dev
         
       - name: Terraform Validate
         run: terraform validate -no-color
+        working-directory: parent_module/dev
         
       - name: Terraform Plan
         run: terraform plan -no-color
+        working-directory: parent_module/dev
