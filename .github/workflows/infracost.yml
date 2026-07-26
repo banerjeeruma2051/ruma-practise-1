@@ -13,6 +13,9 @@ jobs:
       # Required to post Infracost comments on PRs
       pull-requests: write
 
+    env:
+      INFRACOST_ENABLE_CLOUD: true
+
     steps:
       - name: Setup Infracost
         uses: infracost/actions/setup@v3
@@ -29,8 +32,9 @@ jobs:
                               --out-file /tmp/infracost.json
 
       - name: Post Infracost comment
-        uses: infracost/actions/comment@v3
-        with:
-          path: /tmp/infracost.json
-          # Updates the existing comment instead of creating a new one on every commit
-          behavior: update
+        run: |
+          infracost comment github --path /tmp/infracost.json \
+                                   --github-token ${{ secrets.GITHUB_TOKEN }} \
+                                   --pull-request ${{ github.event.pull_request.number }} \
+                                   --repo ${{ github.repository }} \
+                                   --behavior update
