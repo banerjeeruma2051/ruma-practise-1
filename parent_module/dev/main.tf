@@ -92,3 +92,5 @@ module "virtual_machine" {
     }
   }
 }
+
+# Trigger Infracost PR
