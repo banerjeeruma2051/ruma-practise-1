@@ -1,0 +1,184 @@
+26 issue(s) found:
+
+Warning: Missing version constraint for provider "azurerm" in `required_providers` (terraform_required_providers)
+
+  on child_module/nic/nic.tf line 1:
+   1: resource "azurerm_network_interface" "nic" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_providers.md
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on child_module/nic/terraform.tf line 0:
+   (source code not available)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_version.md
+
+Warning: `nic` variable has no type (terraform_typed_variables)
+
+  on child_module/nic/variable.tf line 1:
+   1: variable "nic" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: Missing version constraint for provider "azurerm" in `required_providers` (terraform_required_providers)
+
+  on child_module/resource_group/resource_group.tf line 5:
+   5: resource "azurerm_resource_group" "rg" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_providers.md
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on child_module/resource_group/terraform.tf line 0:
+   (source code not available)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_version.md
+
+Warning: `resource_group` variable has no type (terraform_typed_variables)
+
+  on child_module/resource_group/variables.tf line 1:
+   1: variable "resource_group" {}
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: Missing version constraint for provider "azurerm" in `required_providers` (terraform_required_providers)
+
+  on child_module/storage_account/storage_account.tf line 20:
+  20: resource "azurerm_storage_management_policy" "example" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_providers.md
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on child_module/storage_account/terraform.tf line 0:
+   (source code not available)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_version.md
+
+Warning: `storage_account` variable has no type (terraform_typed_variables)
+
+  on child_module/storage_account/variables.tf line 1:
+   1: variable "storage_account" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: Missing version constraint for provider "azurerm" in `required_providers` (terraform_required_providers)
+
+  on child_module/subnet/subnets.tf line 1:
+   1: resource "azurerm_subnet" "sub" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_providers.md
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on child_module/subnet/terraform.tf line 0:
+   (source code not available)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_version.md
+
+Warning: `subnet` variable has no type (terraform_typed_variables)
+
+  on child_module/subnet/variable.tf line 1:
+   1: variable "subnet" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on child_module/virtual_machine/terraform.tf line 0:
+   (source code not available)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_version.md
+
+Warning: `vm` variable has no type (terraform_typed_variables)
+
+  on child_module/virtual_machine/variable.tf line 1:
+   1: variable "vm" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: [Fixable] Interpolation-only expressions are deprecated in Terraform v0.12.14 (terraform_deprecated_interpolation)
+
+  on child_module/virtual_machine/virtual_machine.tf line 33:
+  33:     computer_name  = "${each.value.computer_name}"
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_deprecated_interpolation.md
+
+Warning: Missing version constraint for provider "azurerm" in `required_providers` (terraform_required_providers)
+
+  on child_module/virtual_machine/virtual_machine.tf line 41:
+  41: resource "azurerm_windows_virtual_machine" "winvm" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_providers.md
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on child_module/virtual_network/terraform.tf line 0:
+   (source code not available)
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_version.md
+
+Warning: `virtual_network` variable has no type (terraform_typed_variables)
+
+  on child_module/virtual_network/variables.tf line 1:
+   1: variable "virtual_network" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: Missing version constraint for provider "azurerm" in `required_providers` (terraform_required_providers)
+
+  on child_module/virtual_network/virtual_network.tf line 1:
+   1: resource "azurerm_virtual_network" "vnet" {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_providers.md
+
+Warning: terraform "required_version" attribute is required (terraform_required_version)
+
+  on parent_module/dev/provider.tf line 1:
+   1: terraform {
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_required_version.md
+
+Warning: `rg` variable has no type (terraform_typed_variables)
+
+  on parent_module/dev/variable.tf line 1:
+   1: variable "rg" {}
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: `storage_account` variable has no type (terraform_typed_variables)
+
+  on parent_module/dev/variable.tf line 3:
+   3: variable "storage_account" {}
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: `vnet` variable has no type (terraform_typed_variables)
+
+  on parent_module/dev/variable.tf line 5:
+   5: variable "vnet" {}
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: `subnet` variable has no type (terraform_typed_variables)
+
+  on parent_module/dev/variable.tf line 7:
+   7: variable "subnet" {}
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: `nic` variable has no type (terraform_typed_variables)
+
+  on parent_module/dev/variable.tf line 9:
+   9: variable "nic" {}   
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
+Warning: `vm` variable has no type (terraform_typed_variables)
+
+  on parent_module/dev/variable.tf line 11:
+  11: variable "vm" {}   
+
+Reference: https://github.com/terraform-linters/tflint-ruleset-terraform/blob/v0.15.0/docs/rules/terraform_typed_variables.md
+
