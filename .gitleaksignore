@@ -1,11 +1,11 @@
 # Ignore past commits with false positives and dummy passwords
-3b9ab6e96177aebbfb7cc3e7b58d3a708300fe72:parent_module/dev/terraform.tfvars:generic-password:71
-3b9ab6e96177aebbfb7cc3e7b58d3a708300fe72:parent_module/dev/terraform.tfvars:generic-password:82
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:20
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:40
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:60
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:80
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:100
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:child_module/virtual_machine/virtual_machine.tf:generic-password:35
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:child_module/virtual_machine/virtual_machine.tf:generic-password:50
-c32c8d37568cce78cd0bc942c6d4f9848b02cb00:parent_module/dev/main.tf:generic-password:88
+3b9ab6e96177aebbfb7cc3e7b58d3a708300fe72:parent_module/dev/terraform.tfvars:generic-password:71 # gitleaks:allow
+3b9ab6e96177aebbfb7cc3e7b58d3a708300fe72:parent_module/dev/terraform.tfvars:generic-password:82 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:20 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:40 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:60 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:80 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:gitleaks-report.json:generic-password:100 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:child_module/virtual_machine/virtual_machine.tf:generic-password:35 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:child_module/virtual_machine/virtual_machine.tf:generic-password:50 # gitleaks:allow
+c32c8d37568cce78cd0bc942c6d4f9848b02cb00:parent_module/dev/main.tf:generic-password:88 # gitleaks:allow
