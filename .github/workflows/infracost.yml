@@ -24,6 +24,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run Infracost Scan
+      - name: Run Infracost Breakdown
         run: |
-          infracost scan --path .
+          infracost breakdown --path .
