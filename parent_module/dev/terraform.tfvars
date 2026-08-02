@@ -7,6 +7,10 @@ rg = {
     name     = "rg2som"
     location = "East Asia"
   },
+  rg3 = {
+    name     = "rg3som"
+    location = "East Asia"
+  },
 
 }
 
