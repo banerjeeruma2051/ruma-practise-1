@@ -3,6 +3,14 @@ rg = {
     name     = "rg1som"
     location = "East Asia"
   },
+  rg2 = {
+    name     = "rg2som"
+    location = "East Asia"
+  },
+  rg3 = {
+    name     = "rg3som"
+    location = "East Asia"
+  },
 
 rg2 = {
     name     = "rg2som"

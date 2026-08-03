@@ -1,0 +1,98 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Infracost Report</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1, h2, h3 { color: #333; }
+            .summary { background: #f8f9fa; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+            .summary p { margin: 5px 0; font-size: 16px; }
+            table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+            th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+            th { background-color: #f2f2f2; }
+            .cost { font-weight: bold; text-align: right; }
+        </style>
+    </head>
+    <body>
+        <h1>Infracost Report</h1>
+        <div class="summary">
+            <h2>Summary</h2>
+            <p><strong>Total Monthly Cost:</strong> 267.304 USD</p>
+            <p><strong>Total Projects:</strong> 1</p>
+            <p><strong>Total Resources:</strong> 10 (4 costed, 6 free)</p>
+            <p><strong>FinOps Policies Failed:</strong> 3</p>
+            <p><strong>Tagging Policies Failed:</strong> 1</p>
+        </div>
+    <h2>Project: main</h2>
+        <table>
+            <tr>
+                <th>Resource Name</th>
+                <th>Resource Type</th>
+                <th>Monthly Cost</th>
+            </tr>
+        
+            <tr>
+                <td>module.resource_group["rg1"].azurerm_resource_group.rg["rg1"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.nic["nic1"].azurerm_network_interface.nic["nic1"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.nic["nic2"].azurerm_network_interface.nic["nic2"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.subnet["subnet1"].azurerm_subnet.sub["subnet1"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.subnet["subnet2"].azurerm_subnet.sub["subnet2"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.virtual_machine["vm1"].azurerm_virtual_machine.main["vm1"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.virtual_machine["vm2"].azurerm_windows_virtual_machine.winvm["vm2"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.virtual_network["vnet1"].azurerm_virtual_network.vnet["vnet1"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.storage_account["sa1"].azurerm_storage_account.stg["sa1"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            
+            <tr>
+                <td>module.storage_account["sa1"].azurerm_storage_management_policy.example["sa1"]</td>
+                <td></td>
+                <td class="cost">0 USD</td>
+            </tr>
+            </table>
+    </body>
+    </html>
+    

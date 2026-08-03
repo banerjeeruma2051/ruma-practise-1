@@ -1,0 +1,106 @@
+name: "Terraform CI/CD"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  # ==========================================
+  # STAGE 1: SCANNING
+  # ==========================================
+  scan:
+    name: Security & Linting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 1. GitLeaks for secrets scanning
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 2. TFLint for Terraform best practices
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v3
+      - name: Run TFLint
+        run: |
+          tflint --init
+          tflint -f compact
+
+      # 3. Checkov for Infrastructure as Code security
+      - name: Checkov
+        uses: bridgecrewio/checkov-action@master
+        with:
+          directory: .
+          framework: terraform
+
+      # 4. Infracost for cloud cost estimation
+      - name: Setup Infracost
+        uses: infracost/actions/setup@v3
+        with:
+          api-key: ${{ secrets.INFRACOST_API_KEY }}
+      - name: Run Infracost
+        run: infracost breakdown --path .
+
+  # ==========================================
+  # STAGE 2: INIT, VALIDATE, & PLAN
+  # ==========================================
+  plan:
+    name: Terraform Plan
+    needs: scan # Wait for scanning to pass
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Validate
+        run: terraform validate
+
+      - name: Terraform Plan
+        run: terraform plan -out=tfplan
+
+      # Save the plan so the apply job can use the exact same plan
+      - name: Upload Plan Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan
+          path: tfplan
+
+  # ==========================================
+  # STAGE 3: APPLY (Only runs on main branch)
+  # ==========================================
+  apply:
+    name: Terraform Apply
+    needs: plan
+    # This condition prevents apply from running on Pull Requests
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Download Plan Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: tfplan
+
+      - name: Terraform Init
+        run: terraform init
+
+      - name: Terraform Apply
+        run: terraform apply -auto-approve tfplan
