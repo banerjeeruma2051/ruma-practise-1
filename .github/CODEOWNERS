@@ -1,0 +1,6 @@
+# Default reviewer for the whole repo
+*       @banerjeeruma2051
+
+
+# Assign a specific person to the CI/CD pipeline files
+.github/workflows/ @Somnath8800
